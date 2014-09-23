@@ -1,0 +1,3 @@
+= simple_form_for Message.new, url: chats_path, remote: true, html: { class: 'form_js' } do |f|
+  = f.input :text, class: "message_text", label: false
+  = link_to 'Send', 'javascript:void(0)', class: "form_btn_js btn"

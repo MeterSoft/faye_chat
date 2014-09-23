@@ -1,0 +1,11 @@
+# Private Pub
+
+run app:
+
+  bundle
+  rake db:setup
+  rails s
+
+run server:
+
+  rackup private_pub.ru -s thin -E production

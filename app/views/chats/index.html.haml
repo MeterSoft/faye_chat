@@ -1,0 +1,10 @@
+%ul.messages
+  = render partial: '/chats/message', collection: @messages, as: :message
+.form= render 'form'
+= subscribe_to "/messages/new"
+
+:javascript
+  PrivatePub.subscribe("/messages/new", function(data, channel) {
+    $('.messages').append(data.msg_body);
+    $('.messages').scrollTop($('.messages')[0].scrollHeight + 100)
+  });

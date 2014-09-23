@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Olympic
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+    /[if gt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    = javascript_include_tag "application"
+  %body
+    .wrapper
+      .main
+        .inner
+          .main-box
+            = yield
